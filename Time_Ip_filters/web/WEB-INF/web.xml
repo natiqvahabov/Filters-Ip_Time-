@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <filter>
+        <filter-name>AdminFilter</filter-name>
+        <filter-class>AdminFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>TimeFilter</filter-name>
+        <filter-class>TimeFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>IpFilter</filter-name>
+        <filter-class>IpFilter</filter-class>
+    </filter>
+   
+    <filter-mapping>
+        <filter-name>IpFilter</filter-name>
+        <url-pattern>/admin.jsp</url-pattern>
+    </filter-mapping>
+    
+    <filter-mapping>
+        <filter-name>TimeFilter</filter-name>
+        <url-pattern>/admin.jsp</url-pattern>
+    </filter-mapping>
+   
+     <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <url-pattern>/admin.jsp</url-pattern>
+    </filter-mapping>
+    
+    <servlet>
+        <servlet-name>Main</servlet-name>
+        <servlet-class>Main</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>Logout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>accessDenied</servlet-name>
+        <servlet-class>accessDenied</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Main</servlet-name>
+        <url-pattern>/Main</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>accessDenied</servlet-name>
+        <url-pattern>/accessDenied</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
